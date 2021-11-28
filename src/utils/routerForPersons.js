@@ -33,7 +33,7 @@ function checkData(person) {
 }
 
 function checkIsHobbyString (hobbiesArray) {
-  if (array.length === 0) {
+  if (hobbiesArray.length === 0) {
     return true;
   }
 
@@ -124,7 +124,7 @@ router.put(messages.person, (req, res) => {
         newPersonData.id = req.personId;
 
         const newPerson = updatePerson(pesonsDataBase, newPersonData);
-        res.statusCode = updatedPerson ? 200 : 404;
+        res.statusCode = newPersonData ? 200 : 404;
         res.send(
             newPerson ? newPerson : messages.invalidPerson
         );
