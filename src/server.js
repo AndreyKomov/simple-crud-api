@@ -41,7 +41,7 @@ class Server {
 
         this.support.forEach((supp) => supp(req, res));
         const curEmit = this.emitter.emit(
-          this._getRouterMask(req.pathname, req.method),
+          this.getMaskforRouter(req.pathname, req.method),
           req,
           res
         );
