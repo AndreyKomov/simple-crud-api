@@ -1,10 +1,10 @@
 const http = require("http");
 const EventEmitter = require("events");
 
-export class Server {
+class Server {
   constructor() {
     this.emitter = new EventEmitter();
-    this.server = this.createServer();
+    this.server = this.createNewServer();
     this.support = [];
   }
 
@@ -28,7 +28,7 @@ export class Server {
     return `[${path}]:[${method}]`;
   }
 
-  createServer() {
+  createNewServer() {
     return http.createServer((req, res) => {
       let body = "";
 
@@ -45,7 +45,7 @@ export class Server {
           req,
           res
         );
-        
+
         if (!curEmit) {
           res.end();
         }
@@ -57,3 +57,5 @@ export class Server {
     this.server.listen(port, callback);
   }
 }
+
+module.exports = Server;

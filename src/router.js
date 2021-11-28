@@ -1,10 +1,10 @@
-export class Router {
+class Router {
   constructor() {
     this.endpoints = {};
   }
 
   request(method = "GET", path, handler) {
-    if (this.endpoints[path]) {
+    if (!this.endpoints[path]) {
       this.endpoints[path] = {};
     }
 
@@ -33,3 +33,5 @@ export class Router {
     this.request("DELETE", path, handler);
   }
 }
+
+module.exports = Router;

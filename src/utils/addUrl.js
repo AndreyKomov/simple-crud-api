@@ -1,6 +1,5 @@
 const addUrl = (base) => (req, res) => {
     const resultUrl = new URL(req.url, base)
-
     const urlsArray = resultUrl.pathname.split('/');
     const firstUrlParam = urlsArray[1];
     const secondUrlParam = urlsArray[2];

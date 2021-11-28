@@ -4,7 +4,7 @@
     "nodemon": "^2.0.15"
   },
   "scripts": {
-    "start:dev": "nodemon app.js"
+    "start:dev": "nodemon api.js"
   },
   "name": "simple-crud-api",
   "description": "my first CRUD API",
@@ -110,6 +110,7 @@
     "unique-string": "^2.0.0",
     "update-notifier": "^5.1.0",
     "url-parse-lax": "^3.0.0",
+    "uuid": "^8.3.2",
     "widest-line": "^3.1.0",
     "wrap-ansi": "^7.0.0",
     "wrappy": "^1.0.2",
